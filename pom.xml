@@ -5,7 +5,7 @@
   <groupId>JenkinsMaven</groupId>
   <artifactId>javasample</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <packaging>war</packaging>
+  <packaging>jar</packaging>
 
   <name>javasample</name>
   <url>http://maven.apache.org</url>
@@ -16,6 +16,11 @@
   <build>
 		<sourceDirectory>src</sourceDirectory>
 		<plugins>
+		 <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>3.1.1</version>
+        </plugin>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.1</version>
