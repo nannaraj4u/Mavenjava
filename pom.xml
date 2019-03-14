@@ -9,6 +9,7 @@
 
   <name>javasample</name>
   <url>http://maven.apache.org</url>
+  
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -16,6 +17,30 @@
   <build>
 		<sourceDirectory>src</sourceDirectory>
 		<plugins>
+		
+		<plugin>
+              <artifactId>maven-assembly-plugin</artifactId>
+              <configuration>
+                  <archive>
+                      <manifest>
+                          <addClasspath>true</addClasspath>
+                          <mainClass>/javasample/src/main/java/JenkinsMaven/javasample/Jenkinsbrowser.java</mainClass>
+                      </manifest>
+                  </archive>
+                  <descriptorRefs>
+                      <descriptorRef>jar-with-dependencies</descriptorRef>
+                  </descriptorRefs>
+              </configuration>
+              <executions>
+                  <execution>
+                      <id>make-my-jar-with-dependencies</id>
+                      <phase>package</phase>
+                      <goals>
+                          <goal>single</goal>
+                      </goals>
+                  </execution>
+              </executions>
+          </plugin>
 		 <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-jar-plugin</artifactId>
@@ -56,4 +81,5 @@
 </dependency>
     
   </dependencies>
+  
 </project>
